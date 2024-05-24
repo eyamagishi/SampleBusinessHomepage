@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-   ブログ記事一覧のページ
+   {{ __('messages.home_index_title') }}
 @endsection
 
 @section('mainimg')

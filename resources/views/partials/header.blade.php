@@ -1,21 +1,19 @@
-<h1 id="logo"><a href="#">SAMPLE COMPANY</a></h1>
-<!--開閉ブロック-->
+<h1 id="logo"><a href="#">{{ config('const.my_company') }}</a></h1>
 <div id="menubar">
     <nav>
         <ul>
-        <li><a href="{{ route('home.index') }}">HOME</a></li>
-        <li><a href="#">SERVICE</a>
+        <li><a href="{{ route('home.index') }}">{{ __('messages.home') }}</a></li>
+        <li><a href="#">{{ __('messages.service') }}</a>
             <ul>
-            <li><a href="#">メニューメニューメニュー</a></li>
-            <li><a href="#">メニュー</a></li>
-            <li><a href="#">メニュー</a></li>
-            <li><a href="#">メニュー</a></li>
+            <li><a href="#">{{ __('messages.menu') }}</a></li>
+            <li><a href="#">{{ __('messages.menu') }}{{ __('messages.menu') }}</a></li>
+            <li><a href="#">{{ __('messages.menu') }}{{ __('messages.menu') }}{{ __('messages.menu') }}</a></li>
+            <li><a href="#">{{ __('messages.menu') }}{{ __('messages.menu') }}{{ __('messages.menu') }}{{ __('messages.menu') }}</a></li>
             </ul>
         </li>
-        <li><a href="#">COMPANY</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">{{ __('messages.company') }}</a></li>
+        <li><a href="#">{{ __('messages.contact') }}</a></li>
         </ul>
     </nav>
-    <div class="sh">小さな端末でのみ表示させたいコンテンツがあればここに入れます。</div>
 </div>
 <!--/#menubar-->
