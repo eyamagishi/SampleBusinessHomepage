@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-   {{ __('messages.home_index_title') }}
+    {{ __('messages.home_index_title') }}
 @endsection
 
 @section('mainimg')
@@ -9,8 +9,8 @@
 @endsection
 
 @section('content')
-<main>
-    <x-information />
-    <x-what-is-new />
-</main>
+    <main>
+        <x-information />
+        <x-what-is-new />
+    </main>
 @endsection
