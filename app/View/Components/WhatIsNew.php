@@ -8,12 +8,14 @@ use Illuminate\View\Component;
 
 class WhatIsNew extends Component
 {
+    public array $newsItems;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(array $newsItems)
     {
-        //
+        $this->newsItems = $newsItems;
     }
 
     /**

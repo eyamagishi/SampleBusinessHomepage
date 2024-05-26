@@ -15,7 +15,42 @@ class HomeController extends Controller
     public function index(): View
     {
         $view = 'home.index';
-        $data = [];
+
+        // Informationを取得
+        $informations = [
+            [
+                'title'       => 'ここにタイトルを入れます',
+                'explanation' => 'ここに説明を入れます。サンプルテキスト。',
+                'img'         => 'images/sample1.jpg',
+                'url'         => '#',
+            ],
+            [
+                'title'       => 'ここにタイトルを入れます',
+                'explanation' => 'ここに説明を入れます。サンプルテキスト。',
+                'img'         => 'images/sample1.jpg',
+                'url'         => '#',
+            ],
+            [
+                'title'       => 'ここにタイトルを入れます',
+                'explanation' => 'ここに説明を入れます。サンプルテキスト。',
+                'img'         => 'images/sample1.jpg',
+                'url'         => '#',
+            ],
+        ];
+
+        // whatIsNewを取得
+        $newsItems = [
+            [
+                'date'        => '2024/05/19',
+                'category'    => 'その他',
+                'description' => 'サンプルテキスト。サンプルテキスト。サンプルテキスト。',
+            ],
+        ];
+
+        $data = [
+            'informations' => $informations,
+            'newsItems'    => $newsItems,
+        ];
         return view($view, $data);
     }
 }

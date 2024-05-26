@@ -8,12 +8,16 @@ use Illuminate\View\Component;
 
 class Information extends Component
 {
+    public array $informations;
+
     /**
      * Create a new component instance.
+     *
+     * @param string $informations
      */
-    public function __construct()
+    public function __construct(array $informations)
     {
-        //
+        $this->informations = $informations;
     }
 
     /**

@@ -10,7 +10,7 @@
 
 @section('content')
     <main>
-        <x-information />
-        <x-what-is-new />
+        <x-information :informations="$informations" />
+        <x-what-is-new :newsItems="$newsItems" />
     </main>
 @endsection

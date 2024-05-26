@@ -8,7 +8,7 @@ return [
     'contact'                => 'CONTACT',
     'menu'                   => 'メニュー',
     'information'            => 'Information',
-    'What_is_new'            => "What's New",
+    'what_is_new'            => "What's New",
     // head
     'title_home_index'       => 'ブログ記事一覧のページ',
     'description_home_index' => 'Laravelの勉強のために作成したサンプルサイトです。',

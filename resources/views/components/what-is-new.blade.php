@@ -1,6 +1,10 @@
 <section>
-    <h2><span class="fade-in-text">{{ __('messages.What_is_new') }}</span></h2>
+    <h2><span class="fade-in-text">{{ __('messages.what_is_new') }}</span></h2>
     <dl class="new">
+        @foreach ($newsItems as $newsItem)
+            <dt>{{ $newsItem['date'] }}<span>{{ $newsItem['category'] }}</span></dt>
+            <dd>{{ $newsItem['description'] }}</dd>
+        @endforeach
         <dt>2024/05/19<span>その他</span></dt>
         <dd>トップのスライドショーをcssスライドショーからjQuery+cssタイプに変更。</dd>
         <dt>2024/05/15<span>その他</span></dt>
