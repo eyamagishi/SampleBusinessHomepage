@@ -6,9 +6,9 @@
             <li><a href="#">{{ __('messages.service') }}</a>
                 <ul>
                     <li><a href="#">{{ __('messages.menu') }}</a></li>
-                    <li><a href="#">{{ __('messages.menu') }}{{ __('messages.menu') }}</a></li>
-                    <li><a href="#">{{ __('messages.menu') }}{{ __('messages.menu') }}{{ __('messages.menu') }}</a></li>
-                    <li><a href="#">{{ __('messages.menu') }}{{ __('messages.menu') }}{{ __('messages.menu') }}{{ __('messages.menu') }}</a></li>
+                    <li><a href="#">{{ __('messages.menu') }}</a></li>
+                    <li><a href="#">{{ __('messages.menu') }}</a></li>
+                    <li><a href="#">{{ __('messages.menu') }}</a></li>
                 </ul>
             </li>
             <li><a href="#">{{ __('messages.company') }}</a></li>

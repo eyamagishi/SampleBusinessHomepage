@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ __('messages.home_index_title') }}
+    {{ __('messages.title_home_index') }}
 @endsection
 
 @section('mainimg')

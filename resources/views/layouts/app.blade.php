@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
@@ -24,7 +25,6 @@
         </div>
 
         @include('partials.footermenu')
-
         <footer>
             @include('partials.footer')
         </footer>
@@ -38,4 +38,5 @@
     <script src="js/main.js"></script>
     @yield('scripts')
 </body>
+
 </html>
