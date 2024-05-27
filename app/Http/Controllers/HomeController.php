@@ -20,19 +20,19 @@ class HomeController extends Controller
         $informations = [
             [
                 'title'       => 'ここにタイトルを入れます',
-                'explanation' => 'ここに説明を入れます。サンプルテキスト。',
+                'description' => 'ここに説明を入れます。サンプルテキスト。',
                 'img'         => 'images/sample1.jpg',
                 'url'         => '#',
             ],
             [
                 'title'       => 'ここにタイトルを入れます',
-                'explanation' => 'ここに説明を入れます。サンプルテキスト。',
+                'description' => 'ここに説明を入れます。サンプルテキスト。',
                 'img'         => 'images/sample1.jpg',
                 'url'         => '#',
             ],
             [
                 'title'       => 'ここにタイトルを入れます',
-                'explanation' => 'ここに説明を入れます。サンプルテキスト。',
+                'description' => 'ここに説明を入れます。サンプルテキスト。',
                 'img'         => 'images/sample1.jpg',
                 'url'         => '#',
             ],

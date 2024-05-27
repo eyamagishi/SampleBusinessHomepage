@@ -6,7 +6,7 @@
                 <figure><img src="{{ $information['img'] }}" alt=""></figure>
                 <div class="text">
                     <h4>{{ $information['title'] }}</h4>
-                    <p>{{ $information['explanation'] }}</p>
+                    <p>{{ $information['description'] }}</p>
                 </div>
                 <p class="btn"><a href="{{ $information['url'] }}">{{ __('messages.for_more_detail') }}</a></p>
             </div>
