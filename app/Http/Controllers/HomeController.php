@@ -37,26 +37,7 @@ class HomeController extends Controller
         $view = 'home.index';
 
         // Informationを取得
-        $informations = [
-            [
-                'title'       => 'ここにタイトルを入れます',
-                'description' => 'ここに説明を入れます。サンプルテキスト。',
-                'img'         => 'images/sample1.jpg',
-                'url'         => '#',
-            ],
-            [
-                'title'       => 'ここにタイトルを入れます',
-                'description' => 'ここに説明を入れます。サンプルテキスト。',
-                'img'         => 'images/sample1.jpg',
-                'url'         => '#',
-            ],
-            [
-                'title'       => 'ここにタイトルを入れます',
-                'description' => 'ここに説明を入れます。サンプルテキスト。',
-                'img'         => 'images/sample1.jpg',
-                'url'         => '#',
-            ],
-        ];
+        $information = $this->informationService->getAll();
 
         // whatIsNewを取得
         $newsItems = [
@@ -68,7 +49,7 @@ class HomeController extends Controller
         ];
 
         $data = [
-            'informations' => $informations,
+            'information' => $information,
             'newsItems'    => $newsItems,
         ];
         return view($view, $data);
