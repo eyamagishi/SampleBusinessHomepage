@@ -6,17 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Information model class
+ * Category model class
  * 
  * @property int $id
- * @property string $title
- * @property string $description
- * @property string $img
- * @property string $url
- * @property int $category_id
+ * @property string $category_name
  * @extends \Illuminate\Database\Eloquent\Model
  */
-class Information extends Model
+class Category extends Model
 {
     use HasFactory;
 
@@ -26,11 +22,7 @@ class Information extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'description',
-        'img',
-        'url',
-        'category_id',
+        'category_name',
     ];
 
     /**
@@ -53,12 +45,12 @@ class Information extends Model
 
     /** ---------- relation ------------------------------------------------------------------------------------------ */
     /**
-     * Get the category that owns the information.
+     * Get the information associated with the category.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function information(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Information::class);
     }
 }

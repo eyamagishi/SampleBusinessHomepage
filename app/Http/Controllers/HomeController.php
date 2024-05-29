@@ -8,6 +8,14 @@ use Illuminate\View\View;
 use App\Services\InformationService\InformationServiceInterface as InformationService;
 use App\Services\UserService\UserServiceInterface as UserService;
 
+/**
+ * HomeController class
+ * 
+ * Controller class for the home screen.
+ * Handles authentication and displays the main screen of the application.
+ * 
+ * @extends \App\Http\Controllers\Controller
+ */
 class HomeController extends Controller
 {
     /**
