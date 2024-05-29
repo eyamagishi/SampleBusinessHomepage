@@ -36,18 +36,18 @@ class HomeController extends Controller
     }
 
     /**
-     * タスクを一覧で表示
-     *
+     * Displays the main screen of the application.
+     * 
      * @return \Illuminate\View\View
      */
     public function index(): View
     {
         $view = 'home.index';
 
-        // Informationを取得
+        // Retrieve information data
         $information = $this->informationService->getAll();
 
-        // whatIsNewを取得
+        // Example news items
         $newsItems = [
             [
                 'date'        => '2024/05/19',
@@ -57,7 +57,7 @@ class HomeController extends Controller
         ];
 
         $data = [
-            'information' => $information,
+            'information'  => $information,
             'newsItems'    => $newsItems,
         ];
         return view($view, $data);
