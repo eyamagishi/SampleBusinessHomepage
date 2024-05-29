@@ -13,6 +13,6 @@ class InformationSeeder extends Seeder
      */
     public function run(): void
     {
-        Information::factory()->count(100)->create();
+        Information::factory()->count(7)->create();
     }
 }
