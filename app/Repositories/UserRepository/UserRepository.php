@@ -4,6 +4,7 @@ namespace App\Repositories\UserRepository;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\DB;
+
 use App\Models\User;
 
 class UserRepository implements UserRepositoryInterface

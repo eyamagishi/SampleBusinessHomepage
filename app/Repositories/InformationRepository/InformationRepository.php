@@ -4,6 +4,7 @@ namespace App\Repositories\InformationRepository;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\DB;
+
 use App\Models\Information;
 
 class InformationRepository implements InformationRepositoryInterface

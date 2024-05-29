@@ -4,6 +4,7 @@ namespace App\Repositories\NewsRepository;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\DB;
+
 use App\Models\News;
 
 class UserRepository implements NewsRepositoryInterface
