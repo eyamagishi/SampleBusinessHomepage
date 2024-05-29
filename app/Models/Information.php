@@ -30,7 +30,6 @@ class Information extends Model
         'description',
         'img',
         'url',
-        'category_id',
     ];
 
     /**
@@ -50,15 +49,4 @@ class Information extends Model
     protected $casts = [
         // 
     ];
-
-    /** ---------- relation ------------------------------------------------------------------------------------------ */
-    /**
-     * Get the category that owns the information.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
 }

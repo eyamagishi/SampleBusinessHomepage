@@ -57,8 +57,8 @@ class HomeController extends Controller
         ];
 
         $data = [
-            'information'  => $information,
-            'newsItems'    => $newsItems,
+            'information' => $information,
+            'newsItems'   => $newsItems,
         ];
         return view($view, $data);
     }

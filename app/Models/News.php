@@ -6,19 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Category model class
+ * Information model class
  * 
  * @property int $id
- * @property string $category_name
+ * @property string $title
+ * @property string $content
+ * @property date $published_at
  * @extends \Illuminate\Database\Eloquent\Model
  */
-class Category extends Model
+class News extends Model
 {
     use HasFactory;
-
-    const OTHER     = 1;
-    const IMPORTANT = 2;
-    const SERVICE   = 3;
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +24,19 @@ class Category extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'category_name',
+        'title',
+        'content',
+        'category_id',
+        'published_at',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'published_at',
     ];
 
     /**
@@ -49,12 +59,12 @@ class Category extends Model
 
     /** ---------- relation ------------------------------------------------------------------------------------------ */
     /**
-     * Get the news associated with the category.
+     * Get the category that owns the News.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function news(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(News::class);
+        return $this->belongsTo(Category::class);
     }
 }

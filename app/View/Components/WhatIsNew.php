@@ -6,12 +6,24 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+/**
+ * WhatIsNew class
+ * 
+ * Component class for displaying "What's New" items.
+ * 
+ * @extends \Illuminate\View\Component
+ */
 class WhatIsNew extends Component
 {
+    /**
+     * @var array
+     */
     public array $newsItems;
 
     /**
      * Create a new component instance.
+     * 
+     * @param array $newsItems
      */
     public function __construct(array $newsItems)
     {
