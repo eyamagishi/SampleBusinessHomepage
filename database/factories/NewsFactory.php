@@ -26,7 +26,7 @@ class NewsFactory extends Factory
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraphs(3, true),
             'category_id' => $categoryId,
-            'published_at' => Carbon::now()->subDays(rand(1, 30)),
+            'published_at' => Carbon::now()->subDays(rand(1, 30))->format('Y/m/d'),
         ];
     }
 }
