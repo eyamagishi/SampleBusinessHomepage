@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * WhatIsNew class
@@ -16,18 +17,20 @@ use Illuminate\View\Component;
 class WhatIsNew extends Component
 {
     /**
-     * @var array
+     * @var Collection
      */
-    public array $newsItems;
+    public Collection $newsItems;
+    public Collection $categories;
 
     /**
      * Create a new component instance.
      * 
      * @param array $newsItems
      */
-    public function __construct(array $newsItems)
+    public function __construct(Collection $newsItems, Collection $categories)
     {
-        $this->newsItems = $newsItems;
+        $this->newsItems  = $newsItems;
+        $this->categories = $categories;
     }
 
     /**

@@ -1,4 +1,4 @@
-<h1 id="logo"><a href="#">{{ config('const.my_company') }}</a></h1>
+<h1 id="logo"><a href="#">{{ config('const.company_name') }}</a></h1>
 <div id="menubar">
     <nav>
         <ul>
