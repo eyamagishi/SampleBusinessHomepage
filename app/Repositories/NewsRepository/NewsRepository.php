@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\News;
 
-class UserRepository implements NewsRepositoryInterface
+class NewsRepository implements NewsRepositoryInterface
 {
     /**
      * @var News
