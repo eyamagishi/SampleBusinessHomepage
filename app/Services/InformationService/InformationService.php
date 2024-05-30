@@ -13,7 +13,7 @@ class InformationService implements InformationServiceInterface
     protected $informationRepository;
 
     /**
-     * @param InformationRepository $InformationRepository
+     * @param InformationRepository $informationRepository
      */
     public function __construct(InformationRepository $informationRepository)
     {
