@@ -23,9 +23,9 @@ class NewsFactory extends Factory
         $categoryId = $this->faker->randomElement($categoryIds);
 
         return [
-            'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraphs(3, true),
-            'category_id' => $categoryId,
+            'title'        => $this->faker->sentence,
+            'content'      => $this->faker->paragraphs(3, true),
+            'category_id'  => $categoryId,
             'published_at' => Carbon::now()->subDays(rand(1, 30))->format('Y/m/d'),
         ];
     }

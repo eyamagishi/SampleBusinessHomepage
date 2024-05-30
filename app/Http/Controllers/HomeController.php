@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 use App\Services\CategoryService\CategoryServiceInterface as CategoryService;
 use App\Services\InformationService\InformationServiceInterface as InformationService;
 use App\Services\NewsService\NewsServiceInterface as NewsService;
-use App\Services\UserService\UserServiceInterface as UserService;
 
 /**
  * HomeController class
@@ -24,29 +23,24 @@ class HomeController extends Controller
      * @var CategoryService
      * @var InformationService
      * @var NewsService
-     * @var UserService
      */
     protected $categoryService;
     protected $informationService;
     protected $newsService;
-    protected $userService;
 
     /**
      * @param CategoryService $categoryService
      * @param InformationService $informationService
      * @param NewsService $newsService
-     * @param UserService $userService
      */
     public function __construct(
         CategoryService $categoryService,
         InformationService $informationService,
-        NewsService $newsService,
-        UserService $userService
+        NewsService $newsService
     ) {
         $this->categoryService    = $categoryService;
         $this->informationService = $informationService;
         $this->newsService        = $newsService;
-        $this->userService        = $userService;
     }
 
     /**
@@ -63,6 +57,7 @@ class HomeController extends Controller
 
         // Retrieve news items
         $newsItems = $this->newsService->getAll();
+        dd($newsItems[0]->published_at, gettype($newsItems[0]->published_at));
 
         // Retrieve categories
         $categories = $this->categoryService->getAllWithIdKeys();

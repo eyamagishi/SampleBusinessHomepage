@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Information model class
+ * Information model class.
  * 
  * @property int $id
  * @property string $title
@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $img
  * @property string $url
  * @property int $category_id
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
  * @extends \Illuminate\Database\Eloquent\Model
  */
 class Information extends Model

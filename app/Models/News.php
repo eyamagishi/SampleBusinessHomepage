@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Information model class
+ * Information model class.
  * 
  * @property int $id
  * @property string $title
  * @property string $content
- * @property date $published_at
+ * @property string $published_at (y/m/d)
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
  * @extends \Illuminate\Database\Eloquent\Model
  */
 class News extends Model
