@@ -15,7 +15,7 @@ class UserRepository implements UserRepositoryInterface
     protected $model;
 
     /**
-     * @param User $User
+     * @param User $user
      */
     public function __construct(User $user)
     {
@@ -58,13 +58,13 @@ class UserRepository implements UserRepositoryInterface
     public function update(int $id, array $attributes): bool
     {
         return DB::transaction(function () use ($id, $attributes) {
-            $information = $this->getById($id);
+            $user = $this->getById($id);
 
-            if (!$information) {
+            if (!$user) {
                 return false;
             }
 
-            return $information->update($attributes);
+            return $user->update($attributes);
         });
     }
 
@@ -74,13 +74,13 @@ class UserRepository implements UserRepositoryInterface
     public function delete(int $id): bool
     {
         return DB::transaction(function () use ($id) {
-            $information = $this->getById($id);
+            $user = $this->getById($id);
 
-            if (!$information) {
+            if (!$user) {
                 return false;
             }
 
-            return $information->delete();
+            return $user->delete();
         });
     }
 }

@@ -7,14 +7,14 @@ use App\Models\User;
 interface UserRepositoryInterface
 {
     /**
-     * Retrieve all information records.
+     * Retrieve all user records.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getAll(): \Illuminate\Database\Eloquent\Collection;
 
     /**
-     * Get an existing information record by its ID.
+     * Get an existing user record by its ID.
      *
      * @param int $id
      * @return User|null
@@ -22,7 +22,7 @@ interface UserRepositoryInterface
     public function getById(int $id): ?User;
 
     /**
-     * Create a new information record.
+     * Create a new user record.
      *
      * @param array $data
      * @return User
@@ -31,7 +31,7 @@ interface UserRepositoryInterface
     public function create(array $data): User;
 
     /**
-     * Update an existing information record by its ID.
+     * Update an existing user record by its ID.
      *
      * @param int $id
      * @param array $attributes
@@ -41,7 +41,7 @@ interface UserRepositoryInterface
     public function update(int $id, array $attributes): bool;
 
     /**
-     * Delete an existing information record by its ID.
+     * Delete an existing user record by its ID.
      *
      * @param int $id
      * @return bool

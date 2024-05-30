@@ -7,14 +7,14 @@ use App\Models\News;
 interface NewsRepositoryInterface
 {
     /**
-     * Retrieve all information records.
+     * Retrieve all news records.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getAll(): \Illuminate\Database\Eloquent\Collection;
 
     /**
-     * Get an existing information record by its ID.
+     * Get an existing news record by its ID.
      *
      * @param int $id
      * @return News|null
@@ -22,7 +22,7 @@ interface NewsRepositoryInterface
     public function getById(int $id): ?News;
 
     /**
-     * Create a new information record.
+     * Create a new news record.
      *
      * @param array $data
      * @return News
@@ -31,7 +31,7 @@ interface NewsRepositoryInterface
     public function create(array $data): News;
 
     /**
-     * Update an existing information record by its ID.
+     * Update an existing news record by its ID.
      *
      * @param int $id
      * @param array $attributes
@@ -41,7 +41,7 @@ interface NewsRepositoryInterface
     public function update(int $id, array $attributes): bool;
 
     /**
-     * Delete an existing information record by its ID.
+     * Delete an existing news record by its ID.
      *
      * @param int $id
      * @return bool

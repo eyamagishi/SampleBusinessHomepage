@@ -58,13 +58,13 @@ class NewsRepository implements NewsRepositoryInterface
     public function update(int $id, array $attributes): bool
     {
         return DB::transaction(function () use ($id, $attributes) {
-            $information = $this->getById($id);
+            $news = $this->getById($id);
 
-            if (!$information) {
+            if (!$news) {
                 return false;
             }
 
-            return $information->update($attributes);
+            return $news->update($attributes);
         });
     }
 
@@ -74,13 +74,13 @@ class NewsRepository implements NewsRepositoryInterface
     public function delete(int $id): bool
     {
         return DB::transaction(function () use ($id) {
-            $information = $this->getById($id);
+            $news = $this->getById($id);
 
-            if (!$information) {
+            if (!$news) {
                 return false;
             }
 
-            return $information->delete();
+            return $news->delete();
         });
     }
 }
