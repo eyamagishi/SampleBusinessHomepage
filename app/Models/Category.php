@@ -18,10 +18,33 @@ class Category extends Model
 {
     use HasFactory;
 
-    const OTHER     = 1;
-    const IMPORTANT = 2;
-    const SERVICE   = 3;
+    const OTHER          = 1;
+    const OTHER_NAME     = 'その他';
+    const IMPORTANT      = 2;
+    const IMPORTANT_NAME = '重要';
+    const SERVICE        = 3;
+    const SERVICE_NAME   = 'サービス';
 
+    public const CATEGORIES = [
+        [
+            'id'            => self::OTHER,
+            'category_name' => self::OTHER_NAME,
+        ],
+        [
+            'id'            => self::IMPORTANT,
+            'category_name' => self::IMPORTANT_NAME,
+        ],
+        [
+            'id'            => self::SERVICE,
+            'category_name' => self::SERVICE_NAME,
+        ],
+    ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Variable Fields
+    |--------------------------------------------------------------------------
+    */
     /**
      * The attributes that are mass assignable.
      *
@@ -49,7 +72,11 @@ class Category extends Model
         // 
     ];
 
-    /** ---------- relation ------------------------------------------------------------------------------------------ */
+    /*
+    |--------------------------------------------------------------------------
+    | Defining Relations
+    |--------------------------------------------------------------------------
+    */
     /**
      * Get the news associated with the category.
      *
@@ -58,5 +85,28 @@ class Category extends Model
     public function news(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(News::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Business Logic
+    |--------------------------------------------------------------------------
+    */
+    /**
+     * Get the news associated with the category.
+     *
+     * @return array
+     */
+    public static function getCategoriesForDataRegistration()
+    {
+        $timestamp = [
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+        $categories = self::CATEGORIES;
+        foreach ($categories as &$category) {
+            $category = array_merge($category, $timestamp);
+        }
+        return $categories;
     }
 }

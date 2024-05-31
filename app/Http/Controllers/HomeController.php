@@ -57,7 +57,6 @@ class HomeController extends Controller
 
         // Retrieve news items
         $newsItems = $this->newsService->getAll();
-        dd($newsItems[0]->published_at, gettype($newsItems[0]->published_at));
 
         // Retrieve categories
         $categories = $this->categoryService->getAllWithIdKeys();
