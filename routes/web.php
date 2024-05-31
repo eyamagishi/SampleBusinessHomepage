@@ -14,4 +14,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+Route::redirect('/', '/index', 301);
+
 Route::get('/index', [HomeController::class, 'index'])->name('home.index');
