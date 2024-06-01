@@ -97,7 +97,7 @@ class Category extends Model
      *
      * @return array
      */
-    public static function getCategoriesForDataRegistration()
+    public static function getCategoriesForDataRegistration(): array
     {
         $timestamp = [
             'created_at' => now(),

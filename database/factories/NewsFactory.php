@@ -22,7 +22,7 @@ class NewsFactory extends Factory
         return [
             'title'        => $this->faker->sentence,
             'content'      => $this->faker->paragraphs(3, true),
-            'category_id'  => Category::inRandomOrder()->first()->id,
+            'category_id'  => Category::factory()->create()->id,
             'published_at' => now()->format('Y/m/d'),
         ];
     }

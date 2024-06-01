@@ -67,13 +67,13 @@ class HomeControllerTest extends TestCase
             ->once()
             ->andReturn($newsItems);
 
-        $response = $this->get(route('home.index'));
-
         // Assert
-        $response->assertViewIs('home.index')
-            ->assertViewHas('information', $information)
-            ->assertViewHas('newsItems', $newsItems)
-            ->assertViewHas('categories', $categories);
+        $response = $this->get(route('home.index'));
+        $response->assertStatus(200);
+        $response->assertViewIs('home.index');
+        $response->assertViewHas('information', $information);
+        $response->assertViewHas('newsItems', $newsItems);
+        $response->assertViewHas('categories', $categories);
     }
 
     /**
