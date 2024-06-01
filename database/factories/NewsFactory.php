@@ -19,9 +19,6 @@ class NewsFactory extends Factory
      */
     public function definition(): array
     {
-        $categoryIds = Category::pluck('id')->toArray();
-        $categoryId = $this->faker->randomElement($categoryIds);
-
         return [
             'title'        => $this->faker->sentence,
             'content'      => $this->faker->paragraphs(3, true),
