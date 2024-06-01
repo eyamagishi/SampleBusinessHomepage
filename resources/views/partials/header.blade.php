@@ -3,7 +3,7 @@
     <nav>
         <ul>
             <li><a href="{{ route('home.index') }}">{{ __('messages.home') }}</a></li>
-            <li><a href="#">{{ __('messages.service') }}</a>
+            <li><a href="{{ route('home.service') }}">{{ __('messages.service') }}</a>
                 <ul>
                     <li><a href="#">{{ __('messages.menu') }}</a></li>
                     <li><a href="#">{{ __('messages.menu') }}</a></li>

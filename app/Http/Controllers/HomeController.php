@@ -68,4 +68,22 @@ class HomeController extends Controller
         ];
         return view($view, $data);
     }
+
+    /**
+     * 
+     * 
+     * @return \Illuminate\View\View
+     */
+    public function service(): View
+    {
+        $view = 'home.service';
+
+        // Retrieve information data
+        $information = $this->informationService->getAll();
+
+        $data = [
+            'information' => $information,
+        ];
+        return view($view, $data);
+    }
 }

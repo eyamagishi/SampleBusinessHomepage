@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ __('messages.description_home_index') }}">
+    <meta name="description" content="{{ __('messages.description') }}">
     @yield('meta')
     <link rel="stylesheet" href="css/style.css">
     @yield('styles')
