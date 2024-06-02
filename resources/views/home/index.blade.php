@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-   ブログ記事一覧のページ
+    {{ __('messages.title_home_index') }}
 @endsection
 
 @section('mainimg')
@@ -9,8 +9,8 @@
 @endsection
 
 @section('content')
-<main>
-    <x-information />
-    <x-what-is-new />
-</main>
+    <main>
+        <x-information :information="$information" />
+        <x-what-is-new :news-items="$newsItems" :categories="$categories" />
+    </main>
 @endsection

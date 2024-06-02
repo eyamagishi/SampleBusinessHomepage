@@ -5,15 +5,30 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Database\Eloquent\Collection;
 
+/**
+ * Information class
+ * 
+ * Component class for displaying information data.
+ * 
+ * @extends \Illuminate\View\Component
+ */
 class Information extends Component
 {
     /**
-     * Create a new component instance.
+     * @var Collection
      */
-    public function __construct()
+    public Collection $information;
+
+    /**
+     * Create a new component instance.
+     * 
+     * @param Collection $informations
+     */
+    public function __construct(Collection $information)
     {
-        //
+        $this->information = $information;
     }
 
     /**
