@@ -14,7 +14,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::redirect('/', '/index', 301);
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');
 
-Route::get('/index', [HomeController::class, 'index'])->name('home.index');
-Route::get('/service', [HomeController::class, 'service'])->name('home.service');
+// Route::redirect('/', '/index', 301);
+
+// Route::get('/index', [HomeController::class, 'index'])->name('home.index');
+// Route::get('/service', [HomeController::class, 'service'])->name('home.service');

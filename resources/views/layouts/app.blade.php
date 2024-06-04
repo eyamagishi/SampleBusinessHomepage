@@ -8,6 +8,8 @@
     @yield('meta')
     <link rel="stylesheet" href="css/style.css">
     @yield('styles')
+    @viteReactRefresh
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 
 <body class="home">
