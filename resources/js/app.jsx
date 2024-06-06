@@ -1,21 +1,19 @@
+import './bootstrap';
+import './main.js';
+import './jquery.inview_set.js';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import About from './components/About';
-import GlobalNav from './components/GlobalNav';
-import Top from './components/Top';
+import Header from './components/Header';
 
 const App = () => {
     return (
         <BrowserRouter>
-            <React.Fragment>
-                <GlobalNav />
-                <Routes>
-                    <Route path="/" element={<Top />} />
-                    <Route path="/about" element={<About />} />
-                </Routes>
-            </React.Fragment>
+            <React.StrictMode>
+                <Header />
+            </React.StrictMode>
         </BrowserRouter>
     );
 }
