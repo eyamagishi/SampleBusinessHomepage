@@ -1,6 +1,5 @@
 import './bootstrap';
 import './main.js';
-import './jquery.inview_set.js';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
