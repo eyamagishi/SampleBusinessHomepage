@@ -5,9 +5,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
-import Footer from './components/Footer';
 import Pagetop from './components/Pagetop';
 
 const App = () => {
