@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/* ===========================================
+ * menu.css
+ * ======================================== */
+
+/* 初期設定
+--------------------------------------------------------------------------- */
+#menubar {
+    display: none;
+}
+
+#menubar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menubar a {
+    display: block;
+    text-decoration: none;
+}
+
+.large-screen #menubar {
+    display: block;
+}
+
+.small-screen #menubar.display-block {
+    display: block;
+}
+
+#menubar_hdr.display-none {
+    display: none;
+}
+
+.ddmenu_parent ul {
+    display: none;
+}
+
+a.ddmenu {
+    cursor: default;
+}
+
+a.ddmenu::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f078";
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* 大きな端末用
+--------------------------------------------------------------------------- */
+.large-screen #menubar>nav>ul {
+    display: flex;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+}
+
+.large-screen #menubar li a {
+    border-radius: 100px;
+    padding: 0.2rem 1rem;
+}
+
+.large-screen #menubar li a:hover {
+    background: #fff;
+}
+
+/* 共通のドロップダウンメニュー
+--------------------------------------------------------------------------- */
+.large-screen #menubar ul ul,
+.small-screen #menubar ul ul {
+    animation: opa1 0.5s 0.1s both;
+}
+
+/* 大きな端末用のドロップダウンメニュー
+--------------------------------------------------------------------------- */
+.large-screen #menubar ul ul {
+    position: absolute;
+    z-index: 100;
+}
+
+.large-screen #menubar ul ul a {
+    margin-top: 0.4rem;
+}
+
+/* 小さな端末用の開閉ブロック
+--------------------------------------------------------------------------- */
+.small-screen #menubar.display-block {
+    position: fixed;
+    overflow: auto;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 90px;
+    background: rgba(0, 0, 0, 0.9);
+    animation: animation1 0.2s both;
+}
+
+.small-screen #menubar nav ul li {
+    border: 1px solid #ccc;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: 0 2rem;
+}
+
+.small-screen #menubar a {
+    padding: 1rem;
+}
+
+.small-screen #menubar,
+.small-screen #menubar a {
+    color: #fff;
+}
+
+#menubar .sh {
+    font-weight: normal;
+    padding: 1rem 2rem 2rem;
+}

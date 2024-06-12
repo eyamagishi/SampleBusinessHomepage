@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* ===========================================
+ * menubar-hdr.css
+ * ======================================== */
+
+#menubar_hdr {
+    animation: opa1 0s 0.2s both;
+    position: fixed;
+    z-index: 101;
+    cursor: pointer;
+    right: 3vw;
+    top: 1vw;
+    padding: 16px 14px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#menubar_hdr span {
+    display: block;
+    transition: 0.3s;
+    border-top: 1.5px solid #333;
+}
+
+#menubar_hdr.ham {
+    background: #ff0000;
+}
+
+#menubar_hdr.ham span:nth-of-type(1),
+#menubar_hdr.ham span:nth-of-type(3) {
+    transform-origin: center center;
+    width: 20px;
+    border-color: #fff;
+}
+
+#menubar_hdr.ham span:nth-of-type(1) {
+    transform: rotate(45deg) translate(3.8px, 5px);
+}
+
+#menubar_hdr.ham span:nth-of-type(3) {
+    transform: rotate(-45deg) translate(3.8px, -5px);
+}
+
+#menubar_hdr.ham span:nth-of-type(2) {
+    display: none;
+}
