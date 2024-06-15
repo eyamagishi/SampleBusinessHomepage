@@ -12,8 +12,7 @@
 </head>
 
 <body class="home">
-    <div id="container">
-    </div>
+    <div id="container"></div>
     <div id="menubar_hdr">
         <span></span><span></span><span></span>
     </div>
