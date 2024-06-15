@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Information from './Information';
 import WhatIsNew from './WhatIsNew';
 

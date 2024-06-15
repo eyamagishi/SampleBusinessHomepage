@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Footermenu = () => {
     return (
         <ul id="footermenu">

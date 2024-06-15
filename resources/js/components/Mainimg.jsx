@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Mainimg = () => {
     return (
         <aside id="mainimg">
