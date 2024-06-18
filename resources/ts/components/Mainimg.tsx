@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Mainimg = () => {
+const Mainimg: React.FC = () => {
     return (
         <aside id="mainimg">
             <div className="slide slide1">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Information = () => {
+const Information: React.FC = () => {
     return (
         <section className="bg1">
             <h2 className="c"><span className="fade-in-text">Information</span></h2>

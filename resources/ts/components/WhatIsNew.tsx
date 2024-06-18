@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WhatIsNew = () => {
+const WhatIsNew: React.FC = () => {
     return (
         <section>
             <h2><span className="fade-in-text">What's New</span><span className="hosoku">お知らせ</span></h2>

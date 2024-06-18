@@ -2,7 +2,7 @@ import React from 'react';
 import Information from './Information';
 import WhatIsNew from './WhatIsNew';
 
-const Contents = () => {
+const Contents: React.FC = () => {
     return (
         <div id="contents">
             <main>

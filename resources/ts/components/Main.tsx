@@ -4,7 +4,7 @@ import Contents from './Contents';
 import Footermenu from './Footermenu';
 import Mainimg from './Mainimg';
 
-const Main = () => {
+const Main: React.FC = () => {
     return (
         <>
             <Mainimg />

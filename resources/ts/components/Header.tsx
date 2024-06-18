@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Menubar from './Menubar';
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <header>
             <h1 id="logo">

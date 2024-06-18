@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footermenu = () => {
+const Footermenu: React.FC = () => {
     return (
         <ul id="footermenu">
             <li><a href="#">home</a></li>
