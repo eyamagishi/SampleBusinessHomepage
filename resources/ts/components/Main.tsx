@@ -1,16 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Contents from './Contents';
 import Footermenu from './Footermenu';
 import Mainimg from './Mainimg';
+import Todo from './Todo';
 
 const Main: React.FC = () => {
     return (
-        <>
-            <Mainimg />
-            <Contents />
-            <Footermenu />
-        </>
+        <Routes>
+          <Route path="/" element={<Mainimg />} />
+          <Route path="/" element={<Contents />} />
+          <Route path="/" element={<Footermenu />} />
+          <Route path="/todo" element={<Todo />} />
+        </Routes>
     );
 };
 

@@ -1,7 +1,7 @@
 import '@js/bootstrap';
 import '@js/main.js';
 
-import React from 'react';
+import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
@@ -12,14 +12,14 @@ import Pagetop from './components/Pagetop';
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <React.StrictMode>
+        <StrictMode>
+            <BrowserRouter>
                 <Header />
                 <Main />
                 <Footer />
                 <Pagetop />
-            </React.StrictMode>
-        </BrowserRouter>
+            </BrowserRouter>
+        </StrictMode>
     );
 }
 
