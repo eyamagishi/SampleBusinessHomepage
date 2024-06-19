@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { debounce } from '@/utils';
+import { debounce } from '../utils';
 
 const Menubar: React.FC = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 900);
@@ -25,28 +25,30 @@ const Menubar: React.FC = () => {
     useEffect(() => {
         const menubar = document.querySelector('#menubar');
     
-        if (isMenuOpen && isSmallScreen) {
-            menubar.classList.add('display-none');
-            menubar.classList.remove('display-block');
-        } else {
-            menubar.classList.add('display-block');
-            menubar.classList.remove('display-none');
-
-            const ddmenuParents = document.querySelectorAll('.ddmenu_parent > ul');
-            ddmenuParents.forEach(ul => {
-                ul.style.display = 'none';
+        if (menubar){
+            if (isMenuOpen && isSmallScreen) {
+                menubar.classList.add('display-none');
+                menubar.classList.remove('display-block');
+            } else {
+                menubar.classList.add('display-block');
+                menubar.classList.remove('display-none');
+    
+                const ddmenuParents = document.querySelectorAll('.ddmenu_parent > ul');
+                ddmenuParents.forEach(ul => {
+                    (ul as HTMLUListElement).style.display = 'none';
+                });
+            }
+    
+            const liElementsWithUl = menubar.querySelectorAll('li:has(ul)');
+            liElementsWithUl.forEach(li => {
+                li.classList.add('ddmenu_parent');
+            });
+    
+            const ddmenuParentLinks = menubar.querySelectorAll('.ddmenu_parent > a');
+            ddmenuParentLinks.forEach(link => {
+                link.classList.add('ddmenu');
             });
         }
-
-        const liElementsWithUl = menubar.querySelectorAll('li:has(ul)');
-        liElementsWithUl.forEach(li => {
-            li.classList.add('ddmenu_parent');
-        });
-
-        const ddmenuParentLinks = menubar.querySelectorAll('.ddmenu_parent > a');
-        ddmenuParentLinks.forEach(link => {
-            link.classList.add('ddmenu');
-        });
 
     }, [isMenuOpen, isSmallScreen]);
 
