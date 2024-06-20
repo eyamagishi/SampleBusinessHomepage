@@ -14,15 +14,20 @@ const App = () => {
     return (
         <StrictMode>
             <BrowserRouter>
+            <div id="container">
                 <Header />
                 <Main />
                 <Footer />
                 <Pagetop />
+            </div>
+            <div id="menubar_hdr">
+                <span></span><span></span><span></span>
+            </div>
             </BrowserRouter>
         </StrictMode>
     );
 }
 
-const container = document.getElementById('container');
+const container = document.getElementById('app');
 const root = createRoot(container!);
 root.render(<App />);

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../css/slide.css';
+
 const Mainimg: React.FC = () => {
     return (
         <aside id="mainimg">

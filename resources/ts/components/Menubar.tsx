@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { debounce } from '../utils';
 
+import '@css/menubar.css';
+
 const Menubar: React.FC = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 900);
     const [isMenuOpen, setIsMenuOpen] = useState(false);

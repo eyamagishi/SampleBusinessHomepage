@@ -8,14 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>タイトル</title>
     @viteReactRefresh
-    @vite(['resources/css/app.css', 'resources/ts/app.tsx'])
+    @vite(['resources/css/app.css', 'resources/ts/App.tsx'])
 </head>
 
 <body class="home">
-    <div id="container"></div>
-    <div id="menubar_hdr">
-        <span></span><span></span><span></span>
-    </div>
+    <div id="app"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
 </body>
