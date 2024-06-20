@@ -1,9 +1,9 @@
-import '@js/bootstrap';
-import '@js/main.js';
-
 import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+
+import '../js/bootstrap';
+import '../js/main.js';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
