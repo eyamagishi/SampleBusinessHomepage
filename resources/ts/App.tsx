@@ -5,15 +5,14 @@ import { createRoot } from 'react-dom/client';
 import '../js/app.js';
 
 import Container from './components/Container';
+import MenubarHdr from './components/MenubarHdr';
 
 const App = () => {
     return (
         <StrictMode>
             <BrowserRouter>
                 <Container />
-                <div id="menubar_hdr">
-                    <span></span><span></span><span></span>
-                </div>
+                <MenubarHdr />
             </BrowserRouter>
         </StrictMode>
     );
