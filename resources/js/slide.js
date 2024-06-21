@@ -2,7 +2,6 @@
 // スライドショー
 //===============================================================
 export function initializeSlideshow() {
-    console.log('スライドショー');
     var slides = $('#mainimg .slide');
     var slideCount = slides.length;
     var currentIndex = 0;
@@ -18,8 +17,4 @@ export function initializeSlideshow() {
 
     // タイマーIDを返す
     return intervalId;
-}
-
-export function cleanupSlideshow(intervalId) {
-    clearInterval(intervalId);
 }
