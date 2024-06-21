@@ -1,8 +1,12 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { initializeSlideshow } from '../../js/slide';
 import '../../css/slide.css';
 
 const Mainimg: React.FC = () => {
+    useEffect(() => {
+        initializeSlideshow();
+    }, []);
+
     return (
         <aside id="mainimg">
             <div className="slide slide1">

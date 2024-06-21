@@ -4,83 +4,62 @@ import { debounce } from '../utils';
 
 import '../../css/menubar.css';
 
-const Menubar: React.FC = () => {
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 900);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const handleResize = useCallback(debounce(() => {
-        setIsSmallScreen(window.innerWidth < 900);
-        setIsMenuOpen(false); // ウィンドウリサイズ時にメニューを閉じる
+        setWindowWidth(window.innerWidth);
     }, 10), []);
 
     useEffect(() => {
-        /**
-         * ウィンドウのリサイズイベントを処理し、画面サイズの状態を更新します。
-         */
         window.addEventListener('resize', handleResize);
-
-        // コンポーネントのアンマウント時にイベントリスナーをクリーンアップ
         return () => window.removeEventListener('resize', handleResize);
     }, [handleResize]);
 
+    return windowWidth;
+};
+
+const Menubar: React.FC = () => {
+    const windowWidth = useWindowWidth();
+    const isSmallScreen = windowWidth < 900;
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const handleAnchorClick = () => {
+        setIsMenuOpen(false);
+    };
+
+    const handleDropdownMouseEnter = () => {
+        setIsDropdownOpen(true);
+    };
+
+    const handleDropdownMouseLeave = () => {
+        setIsDropdownOpen(false);
+    };
+
     useEffect(() => {
         const menubar = document.querySelector('#menubar');
-    
-        if (menubar){
+
+        if (menubar) {
             if (isMenuOpen && isSmallScreen) {
                 menubar.classList.add('display-none');
                 menubar.classList.remove('display-block');
             } else {
                 menubar.classList.add('display-block');
                 menubar.classList.remove('display-none');
-    
-                const ddmenuParents = document.querySelectorAll('.ddmenu_parent > ul');
-                ddmenuParents.forEach(ul => {
-                    (ul as HTMLUListElement).style.display = 'none';
-                });
             }
-    
+
             const liElementsWithUl = menubar.querySelectorAll('li:has(ul)');
             liElementsWithUl.forEach(li => {
                 li.classList.add('ddmenu_parent');
             });
-    
+
             const ddmenuParentLinks = menubar.querySelectorAll('.ddmenu_parent > a');
             ddmenuParentLinks.forEach(link => {
                 link.classList.add('ddmenu');
             });
         }
-
     }, [isMenuOpen, isSmallScreen]);
-
-    /**
-     * メニューの開閉状態をトグルします。
-     */
-    const handleMenuToggle = () => {
-        setIsMenuOpen(prev => !prev);
-    };
-
-    /**
-     * アンカーリンクがクリックされたときにメニューを閉じます。
-     */
-    const handleAnchorClick = () => {
-        setIsMenuOpen(false);
-    };
-
-    /**
-     * マウスがドロップダウンメニューに入ったときにドロップダウンメニューを開きます。
-     */
-    const handleDropdownMouseEnter = () => {
-        setIsDropdownOpen(true);
-    };
-
-    /**
-     * マウスがドロップダウンメニューから離れたときにドロップダウンメニューを閉じます。
-     */
-    const handleDropdownMouseLeave = () => {
-        setIsDropdownOpen(false);
-    };
 
     return (
         <div id="menubar">
