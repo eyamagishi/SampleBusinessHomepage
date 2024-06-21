@@ -4,24 +4,16 @@ import { createRoot } from 'react-dom/client';
 
 import '../js/app.js';
 
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
-import Pagetop from './components/Pagetop';
+import Container from './components/Container';
 
 const App = () => {
     return (
         <StrictMode>
             <BrowserRouter>
-            <div id="container">
-                <Header />
-                <Main />
-                <Footer />
-                <Pagetop />
-            </div>
-            <div id="menubar_hdr">
-                <span></span><span></span><span></span>
-            </div>
+                <Container />
+                <div id="menubar_hdr">
+                    <span></span><span></span><span></span>
+                </div>
             </BrowserRouter>
         </StrictMode>
     );
