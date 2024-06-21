@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { initializeSlideshow } from '../../js/slide';
+import { initializeSlideshow } from '../slide';
 import '../../css/slide.css';
 
 const Mainimg: React.FC = () => {

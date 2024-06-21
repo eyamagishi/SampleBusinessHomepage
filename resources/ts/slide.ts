@@ -7,18 +7,12 @@
  *
  * @returns {void}
  */
-export function initializeSlideshow() {
-    /** @type {number} */
-    const slidesInterval = 4000;
+export function initializeSlideshow(): void {
+    const slidesInterval: number = 4000;
 
-    /** @type {NodeListOf<Element>} */
-    const slides = document.querySelectorAll('#mainimg .slide');
-
-    /** @type {number} */
-    const slideCount = slides.length;
-
-    /** @type {number} */
-    let currentIndex = 0;
+    const slides: NodeListOf<Element> = document.querySelectorAll('#mainimg .slide');
+    const slideCount: number = slides.length;
+    let currentIndex: number = 0;
 
     /**
      * スライドの不透明度を設定します。
@@ -27,8 +21,8 @@ export function initializeSlideshow() {
      * @param {number} opacity - 不透明度の値 (0から1)
      * @returns {void}
      */
-    const setSlideOpacity = (index, opacity) => {
-        slides[index].style.opacity = opacity;
+    const setSlideOpacity = (index: number, opacity: number): void => {
+        (slides[index] as HTMLElement).style.opacity = opacity.toString();
     };
 
     /**
@@ -38,11 +32,11 @@ export function initializeSlideshow() {
      * @param {boolean} isActive - アクティブにする場合は true、解除する場合は false
      * @returns {void}
      */
-    const setActiveClass = (index, isActive) => {
+    const setActiveClass = (index: number, isActive: boolean): void => {
         if (isActive) {
-            slides[index].classList.add('active');
+            (slides[index] as HTMLElement).classList.add('active');
         } else {
-            slides[index].classList.remove('active');
+            (slides[index] as HTMLElement).classList.remove('active');
         }
     };
 
@@ -52,7 +46,7 @@ export function initializeSlideshow() {
      * @param {number} index - 表示するスライドのインデックス
      * @returns {void}
      */
-    const showSlide = (index) => {
+    const showSlide = (index: number): void => {
         setSlideOpacity(index, 1);
         setActiveClass(index, true);
     };
@@ -63,7 +57,7 @@ export function initializeSlideshow() {
      * @param {number} index - 非表示にするスライドのインデックス
      * @returns {void}
      */
-    const hideSlide = (index) => {
+    const hideSlide = (index: number): void => {
         setSlideOpacity(index, 0);
         setActiveClass(index, false);
     };
@@ -73,7 +67,7 @@ export function initializeSlideshow() {
 
     // 一定間隔でスライドを切り替える
     setInterval(() => {
-        const nextIndex = (currentIndex + 1) % slideCount;
+        const nextIndex: number = (currentIndex + 1) % slideCount;
         hideSlide(currentIndex);
         showSlide(nextIndex);
         currentIndex = nextIndex;
