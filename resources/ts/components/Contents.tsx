@@ -1,14 +1,11 @@
 import React from 'react';
-import Information from './Information';
-import WhatIsNew from './WhatIsNew';
+
+import Main from './Main';
 
 const Contents: React.FC = () => {
     return (
         <div id="contents">
-            <main>
-                <Information />
-                <WhatIsNew />
-            </main>
+            <Main />
         </div>
     );
 };
