@@ -8,12 +8,10 @@ const WhatIsNew: React.FC = () => {
                 <dt>20XX/00/00<span className="icon-bg2">重要</span></dt>
                 <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
             </dl>
-            <h2><span className="fade-in-text">What's New</span><span className="hosoku">お知らせ</span></h2>
             <dl className="new">
                 <dt>20XX/00/00<span className="icon-bg2">重要</span></dt>
                 <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
             </dl>
-            <h2><span className="fade-in-text">What's New</span><span className="hosoku">お知らせ</span></h2>
             <dl className="new">
                 <dt>20XX/00/00<span className="icon-bg2">重要</span></dt>
                 <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
