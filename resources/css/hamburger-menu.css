@@ -1,10 +1,10 @@
 @charset "utf-8";
 
 /* ===========================================
- * menubar-hdr.css
+ * hamburger-menu.css
  * ======================================== */
 
-#menubar_hdr {
+#hamburger-menu {
     animation: opa1 0s 0.2s both;
     position: fixed;
     z-index: 101;
@@ -19,31 +19,31 @@
     justify-content: space-between;
 }
 
-#menubar_hdr span {
+#hamburger-menu span {
     display: block;
     transition: 0.3s;
     border-top: 1.5px solid #333;
 }
 
-#menubar_hdr.ham {
+#hamburger-menu.ham {
     background: #ff0000;
 }
 
-#menubar_hdr.ham span:nth-of-type(1),
-#menubar_hdr.ham span:nth-of-type(3) {
+#hamburger-menu.ham span:nth-of-type(1),
+#hamburger-menu.ham span:nth-of-type(3) {
     transform-origin: center center;
     width: 20px;
     border-color: #fff;
 }
 
-#menubar_hdr.ham span:nth-of-type(1) {
+#hamburger-menu.ham span:nth-of-type(1) {
     transform: rotate(45deg) translate(3.8px, 5px);
 }
 
-#menubar_hdr.ham span:nth-of-type(3) {
+#hamburger-menu.ham span:nth-of-type(3) {
     transform: rotate(-45deg) translate(3.8px, -5px);
 }
 
-#menubar_hdr.ham span:nth-of-type(2) {
+#hamburger-menu.ham span:nth-of-type(2) {
     display: none;
 }

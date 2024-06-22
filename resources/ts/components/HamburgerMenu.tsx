@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MenubarHdr: React.FC = () => {
+const HamburgerMenu: React.FC = () => {
     return (
-        <div id="menubar_hdr">
+        <div id="hamburger-menu">
             <span></span><span></span><span></span>
         </div>
     );
 };
 
-export default MenubarHdr;
+export default HamburgerMenu;

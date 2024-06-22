@@ -1,9 +1,12 @@
 @charset "utf-8";
 
 /* ===========================================
- * menu.css
+ * menubar.css
  * ======================================== */
 
+/*メニューブロック初期設定
+---------------------------------------------------------------------------*/
+/*メニューをデフォルトで非表示*/
 #menubar {
     display: none;
 }
@@ -19,6 +22,7 @@
     text-decoration: none;
 }
 
+/*上で非表示にしたメニューを表示させる為の設定*/
 .large-screen #menubar {
     display: block;
 }
@@ -27,62 +31,89 @@
     display: block;
 }
 
-#menubar_hdr.display-none {
+/*3本バーをデフォルトで非表示*/
+#hamburger-menu.display-none {
     display: none;
 }
 
+/*ドロップダウンをデフォルトで非表示*/
 .ddmenu_parent ul {
     display: none;
 }
 
+/*ドロップダウンの親メニューのカーソル表示を変更*/
 a.ddmenu {
     cursor: default;
 }
 
+/*ddmenuを指定しているメニューに矢印アイコンをつける設定*/
 a.ddmenu::before {
     font-family: "Font Awesome 6 Free";
+    /*Font Awesomeを使う指示*/
     content: "\f078";
+    /*使いたいアイコン名（Font Awesome）をここで指定*/
     font-weight: bold;
+    /*この手の設定がないとアイコンが出ない場合があります*/
     margin-right: 0.5em;
+    /*アイコンとテキストとの間に空けるスペース*/
 }
 
-/* 大きな端末用
---------------------------------------------------------------------------- */
+
+/*大きな端末用のメニューブロック設定
+---------------------------------------------------------------------------*/
+/*メニューブロック全体の設定*/
 .large-screen #menubar>nav>ul {
     display: flex;
+    /*横並びにする*/
     font-size: 0.85rem;
+    /*文字サイズ。85%。*/
     gap: 0.5rem;
+    /*メニュー同士の間に空けるマージン的な要素*/
 }
 
+/*メニュー１個あたりの設定*/
 .large-screen #menubar li a {
     border-radius: 100px;
+    /*角を丸くする指定。適当に大きければOKです。*/
     padding: 0.2rem 1rem;
+    /*上下、左右へのメニュー内の余白*/
 }
 
+/*マウスオン時*/
 .large-screen #menubar li a:hover {
     background: #fff;
+    /*背景色*/
 }
 
-/* 共通のドロップダウンメニュー
---------------------------------------------------------------------------- */
+
+/*大きな端末、小さな端末、共通のドロップダウンメニュー設定
+---------------------------------------------------------------------------*/
+/*ドロップダウンブロック*/
 .large-screen #menubar ul ul,
 .small-screen #menubar ul ul {
     animation: opa1 0.5s 0.1s both;
+    /*0.1秒待機後、0.5秒かけてフェードイン表示*/
 }
 
-/* 大きな端末用のドロップダウンメニュー
---------------------------------------------------------------------------- */
+
+/*大きな端末用のドロップダウンメニュー
+---------------------------------------------------------------------------*/
+/*ドロップダウンメニューブロック全体*/
 .large-screen #menubar ul ul {
     position: absolute;
     z-index: 100;
 }
 
+/*メニュー１個あたり*/
 .large-screen #menubar ul ul a {
     margin-top: 0.4rem;
+    /*上に空けるスペース。メニュー同士の隙間です。*/
 }
 
-/* 小さな端末用の開閉ブロック
---------------------------------------------------------------------------- */
+
+/*小さな端末用の開閉ブロック
+---------------------------------------------------------------------------*/
+/*メニューブロック設定*/
 .small-screen #menubar.display-block {
     position: fixed;
     overflow: auto;
@@ -93,26 +124,38 @@ a.ddmenu::before {
     height: 100%;
     padding-top: 90px;
     background: rgba(0, 0, 0, 0.9);
+    /*背景色*/
     animation: animation1 0.2s both;
+    /*animation1を実行する。0.2sは0.2秒の事。*/
 }
 
+/*メニュー１個あたりの設定*/
 .small-screen #menubar nav ul li {
     border: 1px solid #ccc;
+    /*枠線の幅、線種、色*/
     margin: 1rem;
+    /*メニューの外側に空けるスペース*/
     border-radius: 5px;
+    /*角を丸くする指定*/
     padding: 0 2rem;
+    /*メニュー内の余白。上下、左右へ。*/
 }
 
 .small-screen #menubar a {
     padding: 1rem;
+    /*メニュー内の余白*/
 }
 
+/*文字色*/
 .small-screen #menubar,
 .small-screen #menubar a {
     color: #fff;
 }
 
+/*900px以下でのみ表示させるブロック*/
 #menubar .sh {
     font-weight: normal;
+    /*文字の太さを標準にする*/
     padding: 1rem 2rem 2rem;
+    /*上、左右、下へのブロック内の余白*/
 }

@@ -5,14 +5,14 @@ import { createRoot } from 'react-dom/client';
 import '../js/app.js';
 
 import Container from './components/Container';
-import MenubarHdr from './components/MenubarHdr';
+import HamburgerMenu from './components/HamburgerMenu.jsx';
 
 const App = () => {
     return (
         <StrictMode>
             <BrowserRouter>
                 <Container />
-                <MenubarHdr />
+                <HamburgerMenu />
             </BrowserRouter>
         </StrictMode>
     );

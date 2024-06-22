@@ -22,7 +22,7 @@ function debounce(func, wait) {
 
 // 変数でセレクタを管理
 var $menubar = $('#menubar');
-var $menubarHdr = $('#menubar_hdr');
+var $menubarHdr = $('#hamburger-menu');
 
 // menu
 $(window).on("load resize", debounce(function () {
@@ -117,8 +117,8 @@ $(function () {
 $(function () {
     function toggleBodyScroll() {
         // 条件をチェック
-        if ($('#menubar_hdr').hasClass('ham') && !$('#menubar_hdr').hasClass('display-none')) {
-            // #menubar_hdr が 'ham' クラスを持ち、かつ 'display-none' クラスを持たない場合、スクロールを禁止
+        if ($('#hamburger-menu').hasClass('ham') && !$('#hamburger-menu').hasClass('display-none')) {
+            // #hamburger-menu が 'ham' クラスを持ち、かつ 'display-none' クラスを持たない場合、スクロールを禁止
             $('body').css({
                 overflow: 'hidden',
                 height: '100%'
@@ -137,7 +137,7 @@ $(function () {
 
     // クラスが動的に変更されることを想定して、MutationObserverを使用
     const observer = new MutationObserver(toggleBodyScroll);
-    observer.observe(document.getElementById('menubar_hdr'), { attributes: true, attributeFilter: ['class'] });
+    observer.observe(document.getElementById('hamburger-menu'), { attributes: true, attributeFilter: ['class'] });
 });
 
 
