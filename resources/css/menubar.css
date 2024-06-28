@@ -31,11 +31,6 @@
     display: block;
 }
 
-/*3本バーをデフォルトで非表示*/
-#hamburger-menu.display-none {
-    display: none;
-}
-
 /*ドロップダウンをデフォルトで非表示*/
 .ddmenu_parent ul {
     display: none;
