@@ -70,9 +70,9 @@ const Menubar: React.FC = () => {
                         <Link to="#">SERVICE</Link>
                         <ul style={{ display: isDropdownOpen ? 'block' : 'none' }}>
                             <li><Link to="/todo" onClick={handleAnchorClick}>todo</Link></li>
-                            <li><Link to="/service" onClick={handleAnchorClick}>MENU 2</Link></li>
-                            <li><Link to="/service" onClick={handleAnchorClick}>MENU 3</Link></li>
-                            <li><Link to="/service" onClick={handleAnchorClick}>MENU 4</Link></li>
+                            <li><Link to="#" onClick={handleAnchorClick}>MENU 2</Link></li>
+                            <li><Link to="#" onClick={handleAnchorClick}>MENU 3</Link></li>
+                            <li><Link to="#" onClick={handleAnchorClick}>MENU 4</Link></li>
                         </ul>
                     </li>
                     <li><Link to="/company" onClick={handleAnchorClick}>COMPANY</Link></li>
